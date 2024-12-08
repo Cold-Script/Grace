@@ -16,16 +16,9 @@ end
 end
 end)
 end)
-local gui = 
-local button = gui:WaitForChild("Button")
-local guiWindow = gui:WaitForChild("GuiWindow")
-local function toggleGui()
-guiWindow.Visible = not guiWindow.Visible
-end
-button.Activated:Connect(toggleGui)
 workspace.DescendantAdded:Connect(function(descendant)
 if descendant:IsA("ParticleEmitter") then
-descendant.Rate = descendant.Rate * 10
+descendant.Rate = descendant.Rate * 100
 end
 end)
 workspace.DescendantAdded:Connect(function(descendant)
@@ -69,6 +62,7 @@ RS.QuickNotes.SleepyHead:Destroy()
 while true do
 local players = game:GetService("Players")
 local plr = players.LocalPlayer
+plr.Character.Humanoid.WalkSpeed = 30
 local SmileGui = plr:WaitForChild("PlayerGui"):WaitForChild("smilegui")
 if SmileGui then
 SmileGui:Destroy()
