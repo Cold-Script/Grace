@@ -1,0 +1,61 @@
+local Jumpscare = {
+Eye = false,
+EyePrime = false,
+Smile = false,
+Rush = false,
+Worm = false,
+Sorrow = false,
+Elkman = false,
+Goatman = false
+}
+local Rep = game:GetService("ReplicatedStorage")
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.Eyes then
+if v.Name == "eye" then
+v:Destroy()
+Rep.eyegui:Destroy()
+end
+end
+end)
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.Elkman then
+if v.Name == "elkman" then
+v:Destroy()
+Rep.elkman:Destroy()
+end
+end
+end)
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.Rush then
+if v.Name == "Rush" then
+v:Destroy()
+Rep.SenRush:Destroy()
+end
+end
+end)
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.Worm then
+if v.Name == "Worm" then
+v:Destroy()
+Rep.SendWorm:Destroy()
+Rep.Worm:Destroy()
+end
+end
+end)
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.EyesPrime then
+if v.Name == "eyePrime" then
+v:Destroy()
+end
+end
+end)
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.Sorrow then
+Rep.SenSorrow:Destroy()
+end
+end)
+workspace.DescendantAdded:Connect(function(v)
+if not Jumpscare.Goatman then
+Rep.SendGoatman:Destroy()
+end
+end)
