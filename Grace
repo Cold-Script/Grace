@@ -1,6 +1,6 @@
 game.StarterGui:SetCore("SendNotification", {
 Title = "Script Loaded!",
-Text = "Play game now",
+Text = "Credit by rechedmcvn",
 Duration = 3
 })
 local Lighting = game:GetService("Lighting")
@@ -11,14 +11,14 @@ game:GetService("RunService").RenderStepped:Connect(function()
 pcall(function()
 for _,v in next,game.Players.LocalPlayer.Character:GetDescendants() do 
 if v:IsA("BasePart", v) then 
-v.CanCollide = false
+v.CanCollide = _G.Noclip or true
 end
 end
 end)
 end)
 workspace.DescendantAdded:Connect(function(descendant)
 if descendant:IsA("ParticleEmitter") then
-descendant.Rate = descendant.Rate * 100
+descendant.Rate = descendant.Rate * 60
 end
 end)
 workspace.DescendantAdded:Connect(function(descendant)
@@ -62,14 +62,12 @@ RS.QuickNotes.SleepyHead:Destroy()
 while true do
 local players = game:GetService("Players")
 local plr = players.LocalPlayer
-plr.Character.Humanoid.WalkSpeed = 30
 local SmileGui = plr:WaitForChild("PlayerGui"):WaitForChild("smilegui")
 if SmileGui then
 SmileGui:Destroy()
 end
 task.wait(0.1)
-end
-while true do
 ContextActionService:TriggerAction("EKey")
 wait(1)
 end
+
